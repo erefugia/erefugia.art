@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("erefugia.art")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4680097620a29e36d329f7cc05969271fb3015e8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf00bcdec594b70c86bba29ee4017835778b0190")]
 [assembly: System.Reflection.AssemblyProductAttribute("erefugia.art")]
 [assembly: System.Reflection.AssemblyTitleAttribute("erefugia.art")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

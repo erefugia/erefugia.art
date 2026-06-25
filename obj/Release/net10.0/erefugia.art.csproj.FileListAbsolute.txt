@@ -97,3 +97,10 @@ C:\Users\precu\source\repos\erefugia\erefugia.art\obj\Release\net10.0\refint\ere
 C:\Users\precu\source\repos\erefugia\erefugia.art\obj\Release\net10.0\erefugia.art.pdb
 C:\Users\precu\source\repos\erefugia\erefugia.art\obj\Release\net10.0\erefugia.art.genruntimeconfig.cache
 C:\Users\precu\source\repos\erefugia\erefugia.art\obj\Release\net10.0\ref\erefugia.art.dll
+C:\Users\precu\source\repos\erefugia\erefugia.art\bin\Release\net10.0\docs\web.config
+C:\Users\precu\source\repos\erefugia\erefugia.art\bin\Release\net10.0\docs\appsettings.Development.json
+C:\Users\precu\source\repos\erefugia\erefugia.art\bin\Release\net10.0\docs\appsettings.json
+C:\Users\precu\source\repos\erefugia\erefugia.art\bin\Release\net10.0\docs\erefugia.art.deps.json
+C:\Users\precu\source\repos\erefugia\erefugia.art\bin\Release\net10.0\docs\erefugia.art.runtimeconfig.json
+C:\Users\precu\source\repos\erefugia\erefugia.art\bin\Release\net10.0\docs\erefugia.art.staticwebassets.endpoints.json
+C:\Users\precu\source\repos\erefugia\erefugia.art\bin\Release\net10.0\dotnet-tools.json
