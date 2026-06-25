@@ -1,0 +1,2310 @@
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
+
+/* Fonts */
+
+:root {
+    --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Raleway", sans-serif;
+    --nav-font: "Poppins", sans-serif;
+}
+
+.permanent-marker-regular {
+    font-family: "Permanent Marker", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+.architects-daughter-regular {
+    font-family: "Architects Daughter", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root {
+    --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+    --default-color: #16161d; /* Eigengrau. Default color used for the majority of the text content across the entire website */
+    --heading-color: #16161d; /* Color for headings, subheadings and title throughout the website */
+    /* --accent-color: #fd680e; */ /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+    /* --accent-color: #ff6700; /* Blaze Orange. Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+    --accent-color: #c34d00; /* Blaze Orange. Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+
+    --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+    --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
+
+#orderAmazon {
+    background-color: var(--accent-color);
+    border: 0;
+}
+
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+
+.light-background {
+    --background-color: #f8f4f2;
+    --surface-color: #ffffff;
+}
+
+.dark-background {
+    --background-color: #6f6f6f;
+    --default-color: #ffffff;
+    --heading-color: #ffffff;
+    --surface-color: #898989;
+    --contrast-color: #ffffff;
+}
+
+/* Smooth scroll */
+:root {
+    scroll-behavior: smooth;
+}
+
+
+
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+    font-family: var(--default-font);
+    color: var(--default-color);
+    background-color: var(--background-color);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-x: hidden;
+    transition: background-image 2s ease-in-out;
+}
+
+.main {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+    a:hover {
+        color: color-mix(in srgb, var(--accent-color), transparent 25%);
+        text-decoration: none;
+    }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.display-1 {
+    font-size: 3.5em;
+}
+
+.display-2 {
+    font-size: 2.5em;
+}
+
+.display-3 {
+    font-size: 1.5em;
+}
+
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+    position: absolute;
+    inset: 0; /* Fill the container */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    transition: opacity 0.6s ease-out; /* Fade-out effect */
+    width: 100%;
+    height: 60px;
+}
+
+    #preloader:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border: 6px solid var(--accent-color);
+        border-top-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: animate-preloader 1s linear infinite;
+    }
+
+@keyframes animate-preloader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+/*
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: -15px;
+  z-index: 99999;
+  background-color: var(--accent-color);
+  width: 44px;
+  height: 44px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: var(--contrast-color);
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: var(--contrast-color);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+  bottom: 15px;
+}
+*/
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+    [data-aos-delay] {
+        transition-delay: 0 !important;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+.container {
+    background-color: var(--background-color);
+    max-width: 800px;
+}
+
+.container-md-overflow {
+    max-width: 1200px;
+}
+
+section,
+.section {
+    color: var(--default-color);
+    /*
+  padding: 60px 0;
+  scroll-margin-top: 78px;
+  */
+    overflow: visible;
+}
+
+.sectionInterior {
+}
+
+/* 
+  Each section within the page should have a sectionHeader DIV element. That sectionHeader may be tilted positively
+  or negatively a couple of degrees to provide some visual interest and to help guide the reader naturally. 
+*/
+
+.sectionHeader {
+    background-color: transparent;
+    background-image: linear-gradient(var(--default-color), #464d55);
+    border-radius: 8px;
+    border-width: 0;
+    margin-top: -1em;
+    transform: rotate(0deg);
+    position: relative;
+    z-index: 11;
+}
+
+.sectionHeaderNegativeTilt {
+    background-color: transparent;
+    transform: rotate(-1deg);
+}
+
+.sectionHeaderPositiveTilt {
+    background-color: transparent;
+    transform: rotate(1deg);
+}
+
+.pageHeader {
+    margin-top: 0;
+    text-align: center;
+    color: white;
+}
+
+
+/* 
+  Some sections within the page require a sectionIntroduction DIV element to help provide the reader with context
+  about the content they will find within the section.
+*/
+
+.sectionIntroduction {
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .hero img {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    .hero .container {
+        position: relative;
+        z-index: 3;
+        background: transparent;
+    }
+
+    .hero .display-2 {
+        margin: 0;
+        font-size: 48px;
+        font-weight: 300;
+        color: #16161d;
+    }
+
+    .hero p {
+        margin: 10px 0 0 0;
+        font-size: 24px;
+        color: var(--heading-color);
+    }
+
+    .hero .btn-get-started {
+        color: var(--contrast-color);
+        background: var(--accent-color);
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: 1px;
+        display: inline-block;
+        padding: 10px 40px;
+        margin: 30px 0 0 0;
+        border-radius: 50px;
+        transition: 0.3s;
+    }
+
+        .hero .btn-get-started:hover {
+            background: color-mix(in srgb, var(--accent-color) 90%, white 15%);
+        }
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+}
+
+
+
+
+/*--------------------------------------------------------------
+# aboutTheBook Section
+--------------------------------------------------------------*/
+.aboutTheBook {
+    position: relative;
+}
+
+    .aboutTheBook .container-md {
+        position: relative;
+        z-index: 9;
+    }
+
+
+    .aboutTheBook .content h3 {
+        font-size: 1.75rem;
+        font-weight: 700;
+    }
+
+    .aboutTheBook .content .fst-italic {
+        color: color-mix(in srgb, var(--default-color), var(--contrast-color) 50%);
+    }
+
+    .aboutTheBook .content ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .aboutTheBook .content ul li {
+            padding: 10px 0 0 0;
+            display: flex;
+        }
+
+        .aboutTheBook .content ul i {
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+            line-height: 1.2;
+            font-size: 1.25rem;
+        }
+
+    .aboutTheBook .content p:last-child {
+        margin-bottom: 0;
+    }
+
+/*--------------------------------------------------------------
+# Reviews Section
+--------------------------------------------------------------*/
+.reviews .content h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.reviews .content .fst-italic {
+    color: color-mix(in srgb, var(--default-color), var(--contrast-color) 50%);
+}
+
+.reviews .content ul {
+    list-style: none;
+    padding: 0;
+}
+
+    .reviews .content ul li {
+        padding: 10px 0 0 0;
+        display: flex;
+    }
+
+    .reviews .content ul i {
+        color: var(--accent-color);
+        margin-right: 0.5rem;
+        line-height: 1.2;
+        font-size: 1.25rem;
+    }
+
+.reviews .content p:last-child {
+    margin-bottom: 0;
+}
+
+.reviews .sectionIntroduction {
+    margin-top: -1em;
+}
+
+.reviews blockquote {
+    font-style: italic;
+    font-weight: 700;
+    color: var(--default-color);
+    margin-bottom: 0;
+}
+
+.reviews cite {
+    font-size: .8em;
+    display: block;
+    color: var(--default-color);
+}
+
+
+/*--------------------------------------------------------------
+# theWorkWithin Section
+--------------------------------------------------------------*/
+.theWorkWithin .card {
+    background-color: var(--surface-color);
+    color: var(--default-color);
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    margin-bottom: 20px;
+    border: 0;
+    height: 100%;
+    position: relative;
+    border-radius: 18px;
+}
+
+    .theWorkWithin .card .img {
+        position: relative;
+        padding: 0;
+    }
+
+    .theWorkWithin .card .icon {
+        color: var(--accent-color);
+        background-color: color-mix(in srgb, var(--accent-color), white 92%);
+        border: 4px solid var(--background-color);
+        width: 72px;
+        height: 72px;
+        text-align: center;
+        position: absolute;
+        border-radius: 50%;
+        left: calc(50% - 32px);
+        bottom: -36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        line-height: 0;
+        transition: 0.3s;
+    }
+
+    .theWorkWithin .card:hover .icon {
+        background-color: var(--accent-color);
+        color: var(--contrast-color);
+    }
+
+    .theWorkWithin .card h2 {
+        color: var(--heading-color);
+        text-align: center;
+        font-weight: 700;
+        font-size: 24px;
+        padding: 0;
+        padding-left: 25px;
+        padding-right: 25px;
+        margin: 25px 0 12px 0;
+    }
+
+    .theWorkWithin .card:hover h2 {
+        color: var(--accent-color);
+    }
+    /*
+.theWorkWithin .card h2 a {
+  color: var(--heading-color);
+}
+
+.theWorkWithin .card h2 a:hover {
+  color: var(--accent-color);
+}
+*/
+    .theWorkWithin .card p {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 0;
+        padding: 0 30px 0 30px;
+    }
+
+.theWorkWithin blockquote {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 0;
+    padding: 1em 30px 0 30px;
+    font-style: italic;
+    color: red;
+}
+
+.theWorkWithin .sectionIntroduction {
+    margin-top: -1em;
+}
+
+#theWorkWithinInnerContainer {
+    position: relative;
+}
+
+/*--------------------------------------------------------------
+# who-should-read-this-book Section
+--------------------------------------------------------------*/
+
+.who-should-read-this-book .card {
+    color: var(--default-color);
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    margin-bottom: 20px;
+    border: 0;
+    height: 100%;
+    position: relative;
+    border-radius: 18px;
+}
+
+    .who-should-read-this-book .card .img {
+        position: relative;
+        padding: 0;
+    }
+
+    /*
+.who-should-read-this-book .card .icon {
+  color: var(--accent-color);
+  background-color: color-mix(in srgb, var(--accent-color), white 92%);
+  border: 4px solid var(--background-color);
+  width: 72px;
+  height: 72px;
+  text-align: center;
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - 32px);
+  bottom: -36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  line-height: 0;
+  transition: 0.3s;
+}
+*/
+
+    .who-should-read-this-book .card:hover .who-should-read-this-book-icon {
+        color: var(--accent-color);
+    }
+
+    .who-should-read-this-book .card h3.title.permanent-marker-regular {
+        text-align: center;
+        font-weight: 700;
+        font-size: 24px;
+        padding: 0;
+        padding-left: 25px;
+        padding-right: 25px;
+        margin: 12px 0 12px 0;
+        color: var(--heading-color);
+    }
+
+
+    .who-should-read-this-book .card:hover h3.title.permanent-marker-regular {
+        color: var(--accent-color);
+    }
+
+    .who-should-read-this-book .card h3.title.permanent-marker-regular a {
+        color: var(--background-color);
+    }
+
+        .who-should-read-this-book .card h3.title.permanent-marker-regular a:hover {
+            color: var(--accent-color);
+        }
+
+    .who-should-read-this-book .card p {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 0;
+        padding: 0 30px 0 30px;
+    }
+
+.who-should-read-this-book .sectionIntroduction {
+    margin-top: -1em;
+}
+
+
+
+/*--------------------------------------------------------------
+# aboutTheArtist Section
+--------------------------------------------------------------*/
+.aboutTheArtist .card {
+    background-color: var(--surface-color);
+    color: var(--default-color);
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    margin-bottom: 20px;
+    border: 0;
+    height: 100%;
+    position: relative;
+    border-radius: 18px;
+}
+
+    .aboutTheArtist .card .img {
+        position: relative;
+        padding: 0;
+    }
+
+    .aboutTheArtist .card .icon {
+        color: var(--accent-color);
+        background-color: color-mix(in srgb, var(--accent-color), white 92%);
+        border: 4px solid var(--background-color);
+        width: 72px;
+        height: 72px;
+        text-align: center;
+        position: absolute;
+        border-radius: 50%;
+        left: calc(50% - 32px);
+        bottom: -36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        line-height: 0;
+        transition: 0.3s;
+    }
+
+    .aboutTheArtist .card:hover .icon {
+        background-color: var(--accent-color);
+        color: var(--contrast-color);
+    }
+
+    .aboutTheArtist .card h2 {
+        text-align: center;
+        font-weight: 700;
+        font-size: 24px;
+        padding: 0;
+        padding-left: 25px;
+        padding-right: 25px;
+        margin: 25px 0 12px 0;
+    }
+
+        .aboutTheArtist .card h2 a {
+            color: var(--heading-color);
+        }
+
+            .aboutTheArtist .card h2 a:hover {
+                color: var(--accent-color);
+            }
+
+    .aboutTheArtist .card p {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 0;
+        padding: 0 30px 0 30px;
+    }
+
+.aboutTheArtist .bio-container {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+    .aboutTheArtist .bio-container #self-portrait {
+        width: 100%;
+        height: auto;
+        opacity: 1;
+        transition: opacity 2s ease;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+.aboutTheArtist .sectionIntroduction {
+    margin-top: -1em;
+}
+
+
+/*--------------------------------------------------------------
+# bonusMaterials Section
+--------------------------------------------------------------*/
+.bonusMaterials .card {
+    background-color: var(--surface-color);
+    color: var(--default-color);
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    margin-bottom: 20px;
+    border: 0;
+    height: 100%;
+    position: relative;
+    border-radius: 18px;
+}
+
+    .bonusMaterials .card .img {
+        position: relative;
+        padding: 0;
+    }
+
+    .bonusMaterials .card .icon {
+        color: var(--accent-color);
+        background-color: color-mix(in srgb, var(--accent-color), white 92%);
+        border: 4px solid var(--background-color);
+        width: 72px;
+        height: 72px;
+        text-align: center;
+        position: absolute;
+        border-radius: 50%;
+        left: calc(50% - 32px);
+        bottom: -36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        line-height: 0;
+        transition: 0.3s;
+    }
+
+    .bonusMaterials .card:hover .icon {
+        background-color: var(--accent-color);
+        color: var(--contrast-color);
+    }
+
+    .bonusMaterials .card h2.title.permanent-marker-regular {
+        text-align: center;
+        font-weight: 700;
+        font-size: 24px;
+        padding: 0;
+        padding-left: 25px;
+        padding-right: 25px;
+        margin: 25px 0 12px 0;
+        color: var(--heading-color);
+    }
+
+    .bonusMaterials .card:hover h2 {
+        color: var(--accent-color);
+    }
+
+
+    .bonusMaterials .card h2 a {
+        color: var(--heading-color);
+    }
+
+        .bonusMaterials .card h2 a:hover {
+            color: var(--accent-color);
+        }
+
+    .bonusMaterials .card p {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 0;
+        padding: 0 30px 0 30px;
+    }
+
+.bonusMaterials .sectionIntroduction {
+    margin-top: -1em;
+}
+
+#youtube-cxwzRekg3M {
+    background-image: url('https://i.ytimg.com/vi/cxwz_Rekg3M/hqdefault.jpg');
+}
+
+#youtube-ANsYXoRZZT0 {
+    background-image: url('https://i.ytimg.com/vi/ANsYXoRZZT0/hqdefault.jpg');
+}
+
+#youtube-IV01NPZAGI {
+    background-image: url('https://i.ytimg.com/vi/IV01NPZ-AGI/hqdefault.jpg');
+}
+
+#youtube-AT6DGIqXLgs {
+    background-image: url('https://i.ytimg.com/vi/AT6DGIqXLgs/hqdefault.jpg');
+}
+
+#youtube-IqadymJMpVo {
+    background-image: url('https://i.ytimg.com/vi/IqadymJMpVo/hqdefault.jpg');
+}
+
+youtube-IqadymJMpVo-news {
+    background-image: url('https://i.ytimg.com/vi/IqadymJMpVo/hqdefault.jpg');
+}
+
+#youtube-XQKdQqvxmSg {
+    background-image: url('https://i.ytimg.com/vi/XQKdQqvxmSg/hqdefault.jpg');
+}
+
+youtube-XQKdQqvxmSg-news {
+    background-image: url('https://i.ytimg.com/vi/XQKdQqvxmSg/hqdefault.jpg');
+}
+
+#youtube-cQfPLgQdyCo {
+    background-image: url('https://i.ytimg.com/vi/cQfPLgQdyCo/hqdefault.jpg');
+}
+
+#youtube-cQfPLgQdyCo-news {
+    background-image: url('https://i.ytimg.com/vi/cQfPLgQdyCo/hqdefault.jpg');
+}
+
+.youtube-img::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 102px;
+    height: 72px;
+    background: url('/assets/img/you-tube.png') no-repeat center;
+    background-size: contain;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+
+
+
+#youtube-fqCJyYUnE24 {
+    background-image: url('https://i.ytimg.com/vi/fqCJyYUnE24/hqdefault.jpg');
+}
+
+#youtube-pr0eEAkYIw {
+    background-image: url('https://i.ytimg.com/vi/pr0eEAkY_Iw/hqdefault.jpg');
+}
+
+#drawing-meditation-watermarked {
+    width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+# overTheHorizon Section
+--------------------------------------------------------------*/
+/*
+.overTheHorizon .card {
+  background-color: var(--surface-color);
+  color: var(--default-color);
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  margin-bottom: 20px;
+  border: 0;
+  height: 100%;
+  position: relative;
+  border-radius: 18px;
+}
+
+.overTheHorizon .card .img {
+  position: relative;
+  padding: 0;
+}
+
+.overTheHorizon .card .icon {
+  color: var(--accent-color);
+  background-color: color-mix(in srgb, var(--accent-color), white 92%);
+  border: 4px solid var(--background-color);
+  width: 72px;
+  height: 72px;
+  text-align: center;
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - 32px);
+  bottom: -36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  line-height: 0;
+  transition: 0.3s;
+}
+
+.overTheHorizon .card:hover .icon {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.overTheHorizon .card h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+  padding: 0;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: 25px 0 12px 0;
+}
+
+.overTheHorizon .card h2 a {
+  color: var(--heading-color);
+}
+
+.overTheHorizon .card h2 a:hover {
+  color: var(--accent-color);
+}
+
+.overTheHorizon .card p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  padding: 0 30px 0 30px;
+}
+*/
+/*--------------------------------------------------------------
+# contactMe Section
+--------------------------------------------------------------*/
+.contactMe .info-item i {
+    font-size: 20px;
+    color: var(--accent-color);
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+.contactMe .info-item h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.contactMe .info-item p {
+    padding: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.contactMe p a {
+    color: #c34d00;
+    text-decoration: underline;
+}
+
+#protonMail {
+    margin-top: 1em;
+    text-align: center;
+}
+
+#pgpKey {
+    margin-top: 1em;
+    color: #747474;
+    font-family: monospace;
+    font-size: .6em;
+    text-align: center;
+}
+
+    #pgpKey > div {
+        white-space: pre;
+    }
+
+#pgpUsageReferences {
+    margin-top: 1em;
+    color: #747474;
+    text-align: center;
+}
+
+#socialMediaLinks {
+    margin-top: 1em;
+    color: #747474;
+    text-align: center;
+}
+
+
+@media (min-width: 992px) {
+    .contactMe .info-item.info-item-borders {
+        border-left: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+        border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+    }
+}
+
+.privacyStatement
+
+.privacyStatement .container {
+    background-color: var(--surface-color);
+    color: var(--default-color);
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    margin-bottom: 20px;
+    border: 0;
+    height: 100%;
+    position: relative;
+    border-radius: 18px;
+}
+
+.privacyStatement p {
+    text-align: center;
+}
+
+.privacyStatement h3 {
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Custom
+--------------------------------------------------------------*/
+
+
+
+
+
+.material-box-shadow-1 {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+    .material-box-shadow-1:hover {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+
+.material-box-shadow-2 {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.material-box-shadow-3 {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.material-box-shadow-4 {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.material-box-shadow-5 {
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.material-box-shadow-5-inverse {
+    box-shadow: 0px -19px 19px rgba(0,0,0,0.30), 0 -15px 15px rgba(0,0,0,0.22);
+}
+
+.material-box-shadow-5-centered {
+    box-shadow: 0px 0 40px rgba(0,0,0,0.30);
+}
+
+.material-box-background {
+    box-shadow: rgba(0, 0, 0, 0.76) 0px 22px 70px 4px;
+}
+
+
+/* Twinkling Stars https://codepen.io/WebSonick/pen/nBPZZO */
+
+.stars {
+    position: absolute;
+    top: calc(100vh + 80px);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: linear-gradient(to top, transparent 0%, black 100%);
+    z-index: 4;
+}
+
+    .stars:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: transparent url('../img/background-stars.png') repeat top center;
+    }
+
+.moonOuter {
+    position: relative;
+    top: 250px;
+    left: 250px;
+    display: block;
+    height: 0px;
+}
+
+.moon {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    ;
+    border-radius: 50%;
+    background: rgb(240,223,246);
+    background: radial-gradient(circle, rgba(222, 213, 228, 0.887) 4%, rgb(248, 246, 246) 100%);
+    box-shadow: 0 0 70px 10px #f5e4e4ab,0 0 70px 20px #ca69b5dc,0 0 70px 30px #e772e1dc;
+    animation: move 5s infinite;
+    z-index: 5;
+}
+
+@keyframes move {
+    50% {
+        box-shadow: 0px 0px 70px 20px #f5e4e4dc,0 0 70px 40px #ca69b5dc,0px 0px 70px 40px #e772e1dc;
+    }
+}
+
+.crat {
+    position: absolute;
+    top: 80px;
+    left: 70px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: inset 1px 4px 5px 1px rgb(185, 173, 185);
+    border: 4px solid rgb(216, 205, 219);
+}
+
+.crat2 {
+    position: absolute;
+    top: 45px;
+    left: 40px;
+    width: 10px;
+    height: 10px;
+}
+
+.crat3 {
+    position: absolute;
+    top: 25px;
+    left: 50px;
+    width: 20px;
+    height: 20px;
+}
+
+.crat4 {
+    position: absolute;
+    top: 35px;
+    left: 100px;
+    width: 15px;
+    height: 15px;
+}
+
+.crat5 {
+    top: 120px;
+    left: 60px;
+    width: 10px;
+    height: 10px;
+}
+
+.crat6 {
+    top: 90px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    box-shadow: inset 1px 7px 7px 1px rgb(204, 183, 204);
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgb(223, 189, 226);
+    box-shadow: 0px 0px 16px 2px rgb(233, 179, 215);
+    animation-duration: 3s;
+    animation-name: twinkle;
+    animation-iteration-count: infinite;
+}
+
+.star1 {
+    top: 200px;
+    left: 200px;
+    height: 5px;
+    width: 5px;
+    animation-delay: 3s;
+}
+
+.star2 {
+    top: 250px;
+    left: 250px;
+    height: 3px;
+    width: 3px;
+    animation-delay: 2s;
+}
+
+.star3 {
+    top: 100px;
+    left: 300px;
+    height: 2px;
+    width: 2px;
+}
+
+.star4 {
+    top: 50px;
+    left: 400px;
+    height: 1px;
+    width: 1px;
+    animation-delay: 1s;
+}
+
+@keyframes twinkle {
+    50% {
+        transform: scale(0.5);
+        opacity: -1;
+    }
+}
+
+/* CLOUDS https://codepen.io/irshadav/pen/GRwKRZ*/
+
+.cloudsOuter {
+    position: relative;
+}
+
+.cloudsInner {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cloudsInner2 {
+    display: block;
+    position: absolute;
+    top: -200px;
+    left: 0;
+}
+
+.cloudsInner3 {
+    display: block;
+    position: absolute;
+    top: 200px;
+    left: 0;
+}
+
+.sun {
+    display: inline-block;
+    position: relative;
+    top: -300px;
+    left: 1300px;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    background: orange;
+    box-shadow: 0 0 10px orange, 0 0 60px orange, 0 0 200px yellow, inset 0 0 80px yellow;
+    align: center;
+    z-index: 5;
+}
+
+/* SUN RAYS https://codepen.io/mgkOV/pen/qzNegg */
+.ray_box {
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 70px;
+    -webkit-animation: ray_anim 120s linear infinite;
+    animation: ray_anim 120s linear infinite;
+}
+
+.ray {
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+    margin-left: 10px;
+    border-radius: 80% 80% 0 0;
+    position: absolute;
+    opacity: 0.1;
+}
+
+.ray1 {
+    height: 170px;
+    width: 30px;
+    -webkit-transform: rotate(180deg);
+    top: -175px;
+    left: 15px;
+}
+
+.ray2 {
+    height: 100px;
+    width: 8px;
+    -webkit-transform: rotate(220deg);
+    top: -90px;
+    left: 75px;
+}
+
+.ray3 {
+    height: 170px;
+    width: 50px;
+    -webkit-transform: rotate(250deg);
+    top: -80px;
+    left: 100px;
+}
+
+.ray4 {
+    height: 120px;
+    width: 14px;
+    -webkit-transform: rotate(305deg);
+    top: 30px;
+    left: 100px;
+}
+
+.ray5 {
+    height: 140px;
+    width: 30px;
+    -webkit-transform: rotate(-15deg);
+    top: 60px;
+    left: 40px;
+}
+
+.ray6 {
+    height: 90px;
+    width: 50px;
+    -webkit-transform: rotate(30deg);
+    top: 60px;
+    left: -40px;
+}
+
+.ray7 {
+    height: 180px;
+    width: 10px;
+    -webkit-transform: rotate(70deg);
+    top: -35px;
+    left: -40px;
+}
+
+.ray8 {
+    height: 120px;
+    width: 30px;
+    -webkit-transform: rotate(100deg);
+    top: -45px;
+    left: -90px;
+}
+
+.ray9 {
+    height: 80px;
+    width: 10px;
+    -webkit-transform: rotate(120deg);
+    top: -65px;
+    left: -60px;
+}
+
+.ray10 {
+    height: 190px;
+    width: 23px;
+    -webkit-transform: rotate(150deg);
+    top: -185px;
+    left: -60px;
+}
+
+
+@-webkit-keyframes ray_anim {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.cloudTop {
+    display: inline-block;
+    background: white;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: relative;
+    top: -100px;
+    -webkit-filter: blur(6px);
+    z-index: 6;
+    left: -150px;
+    animation: 25000ms cloudAnimation linear infinite;
+    opacity: 0.76;
+}
+
+    .cloudTop:before {
+        content: "";
+        display: inline-block;
+        background: white;
+        width: 100px;
+        height: 100px;
+        -webkit-filter: blur(3px);
+        position: relative;
+        border-radius: 50%;
+        top: -30px;
+        left: 60px;
+    }
+
+    .cloudTop:after {
+        content: "";
+        display: inline-block;
+        background: white;
+        width: 200px;
+        height: 100px;
+        -webkit-filter: blur(3px);
+        position: relative;
+        border-radius: 50%;
+        top: -80px;
+        left: 70px;
+    }
+
+    .cloudTop:first-child {
+        zoom: 2;
+    }
+
+.cloudMiddle {
+    display: inline-block;
+    background: white;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: relative;
+    top: -30px;
+    -webkit-filter: blur(6px);
+    z-index: 502;
+    left: -50px;
+    animation: 35000ms cloudAnimation linear infinite;
+    opacity: 0.76;
+}
+
+    .cloudMiddle:before {
+        content: "";
+        display: inline-block;
+        background: white;
+        width: 100px;
+        height: 100px;
+        -webkit-filter: blur(3px);
+        position: relative;
+        border-radius: 50%;
+        top: -30px;
+        left: 60px;
+    }
+
+    .cloudMiddle:after {
+        content: "";
+        display: inline-block;
+        background: white;
+        width: 200px;
+        height: 100px;
+        -webkit-filter: blur(3px);
+        position: relative;
+        border-radius: 50%;
+        top: -80px;
+        left: 70px;
+    }
+
+    .cloudMiddle:first-child {
+        zoom: 1.5;
+    }
+
+.cloudBottom {
+    display: inline-block;
+    background: white;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: relative;
+    top: -100px;
+    -webkit-filter: blur(6px);
+    z-index: 6;
+    left: -450px;
+    animation: 25000ms cloudAnimation linear infinite;
+    opacity: 0.76;
+}
+
+    .cloudBottom:before {
+        content: "";
+        display: inline-block;
+        background: white;
+        width: 100px;
+        height: 100px;
+        -webkit-filter: blur(3px);
+        position: relative;
+        border-radius: 50%;
+        top: -30px;
+        left: 60px;
+    }
+
+    .cloudBottom:after {
+        content: "";
+        display: inline-block;
+        background: white;
+        width: 200px;
+        height: 100px;
+        -webkit-filter: blur(3px);
+        position: relative;
+        border-radius: 50%;
+        top: -80px;
+        left: 70px;
+    }
+
+    .cloudBottom:first-child {
+        zoom: 1.6;
+    }
+
+
+@keyframes cloudAnimation {
+    0% {
+        transform: translate(-800px,0);
+    }
+
+    100% {
+        transform: translate(1800px,0);
+    }
+}
+
+
+/* Birds */
+/*
+.bird {
+  width: 25px;
+  height: 5px;
+  display: inline-block;
+  position: absolute;
+  transform: skew(20deg, 20deg);
+  animation: wave 2.5s ease-in-out infinite;
+  z-index:900;
+}
+
+.bird:before,
+.bird:after {
+  content: '';
+  width: 99%;
+  height: 100%;
+  background-color: #000;
+  position: absolute;
+  border-radius: 20%;
+}
+
+.bird:before {
+  right: 49%;
+  transform-origin: right;
+  transform: rotate(-40deg);
+  animation: flap-left .75s ease-in-out infinite;
+}
+
+.bird:after {
+  left: 49%;
+  transform-origin: left;
+  transform: rotate(40deg);
+  animation: flap-right .75s linear infinite;
+}
+
+@keyframes wave {
+  40% {
+    transform: translateY(40px) skew(20deg, 20deg);
+  }
+  50% {
+    transform: translateY(50px) skew(20deg, 20deg);
+  }
+  60% {
+    transform: translateY(40px) skew(20deg, 20deg);
+  }
+  100% {
+    transform: translateY(0) skew(20deg, 20deg);
+  }
+}
+
+@keyframes flap-left {
+  60% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(-40deg);
+  }
+}
+
+@keyframes flap-right {
+  60% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(40deg);
+  }
+}
+*/
+
+#rewilding-hypergraphia-by-laughing-lion-silly-monkie-cover-front {
+    width: 100%;
+    border: 1px solid #16161d;
+}
+
+#rewilding-hypergraphia-by-laughing-lion-silly-monkie-cover-back {
+    width: 100%;
+    border: 1px solid #16161d;
+}
+
+#rewilding-hypergraphia-by-laughing-lion-silly-monkie-ebook-cover {
+    width: 100%;
+    border: 1px solid #16161d;
+}
+
+/* https://codepen.io/lynnandtonic/pen/JjGmrBz */
+/*
+.book {
+  width: 13em;
+  height: calc(20.5em);
+  margin-top: -4.4em;
+  position: relative;
+  transform: perspective(60em) rotateX(58deg) rotateZ(-34deg) skewY(-7deg);
+  box-shadow: 
+    -1.4em 1.7em 0.3em -0.3em rgba(0, 0, 0, 0.8),
+    -1.6em 1.8em 0.9em -0.2em rgba(0, 0, 0, 0.5),
+    0.3em 1.9em 1.3em rgba(0, 0, 0, 0.3);
+  border-top-right-radius: 0.4em;
+}
+
+.book img {
+  border-top-right-radius: 0.4em;
+  box-sizing: border-box;
+  width: 100%;
+  clip: rect(0em, 13em, 20.5em, 0em);
+  display: block;
+  position: absolute;
+  filter: saturate(90%);
+}
+
+.book:before,
+.book:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+
+.book:before {
+  width: 105%;
+  height: 105%;
+  left: -5%;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-image: 
+    linear-gradient(115deg, transparent 2.8%, #3f3f3f 3%, #3f3f3f 16%, transparent 16%),
+    linear-gradient(125deg, transparent 10%, #3f3f3f 10%, #3f3f3f 17%, #222 46.8%, transparent 47%),
+    linear-gradient(125deg, transparent 46%, rgba(0, 0, 0, 0.5) 46.5%, rgba(0, 0, 0, 0.25) 49%, transparent 53%),
+    linear-gradient(to right, #444, #666),
+    linear-gradient(#444, #444),
+    linear-gradient(140deg, transparent 45%, #eee 45%, #ccc 96.8%, rgba(170, 170, 170, 0) 97%);
+  background-size: 
+    100% 100%,
+    100% 120%,
+    100% 100%,
+    100% 0.4em,
+    94% 0.2em,
+    100% 100%;
+  background-position: 
+    0 0,
+    0 0,
+    0 0,
+    0 95.8%,
+    0 100%,
+    0 0;
+}
+
+.book:after {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-image: 
+    linear-gradient(to right, transparent 2%, rgba(0, 0, 0, 0.1) 3%, rgba(0, 0, 0, 0.1) 4%, transparent 5%),
+    linear-gradient(-50deg, rgba(0, 0, 0, 0.1) 20%, transparent 100%),
+    linear-gradient(-50deg, rgba(0, 0, 0, 0.2) 20%, transparent 100%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 20%, transparent 100%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 20%, transparent 100%);
+  background-size: 
+    100% 100%,
+    2% 20%,
+    1% 20%,
+    2% 20%,
+    1% 20%;
+  background-position: 
+    0 0,
+    2.2% 100%,
+    3% 100%,
+    2.2% 0,
+    3% 0;
+}
+
+.book > img {
+  width: 220px;
+}
+*/
+
+/* Lightbox */
+.lightbox-caption {
+    background: #000;
+    color: white;
+    font-style: normal;
+}
+
+
+#card-lifes-wake-is-art {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-lifes-wake-is-art.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-a-prayer-of-connection {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-dad.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-a-prayer-of-gratitude-for-karma {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-a-prayer-of-gratitude-for-karma.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-a-prayer-of-gratitude-for-the-miracle-of-life {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-a-prayer-of-gratitude-for-the-miracle-of-life.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-a-prayer-of-gratitude-for-the-miracle-of-existence {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-a-prayer-of-gratitude-for-the-miracle-of-existence.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-harmonious-anarchy {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-harmonious-anarchy.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-if-equality-were-real {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/conte-crayon-if-equality-were-real.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-harmonious-joy {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-harmonious-joy.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-just-for-a-moment-forget-it-all-and-remember-infinity-with-me {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-just-for-a-moment-forget-it-all-and-remember-infinity-with-me.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-song-birds-sing-their-song {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-song-birds-sing-their-song.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-tantric-magic {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/chalk-tantric-magic.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-kundalini-initiation {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-kundalini-initiation.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-gentle-grandmother-tree-a-eulogy {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/chalk-gentle-grandmother-tree.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-just-lie-and-tell-me-its-alright {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-just-lie-and-tell-me-its-alright.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-a-conversation-between-young-me-and-old-me {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-a-conversation-between-young-me-and-old-me.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-fiending-for-bodiless-freedom {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/unnamed-3.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-heyoka {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/drawing-heyoka.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-stand-of-illusions {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/mandala-stand-of-illusions.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-ecstatic-union {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-ecstatic-union.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-cardinality {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-cardinality.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-zealots-and-atheists {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/drawing-zealots-and-atheists.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-lol {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/unnamed-4.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-they-tried-to-teach-me {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/chalk-they-tried-to-teach-me.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-cleansing-the-slate {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-cleansing-the-slate.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-harmony {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-harmony.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-fully-conscious-lovers {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/drawing-fully-conscious-lovers.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-inside-the-stillness {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-inside-the-stillness.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-the-moon {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-the-moon.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-speak-in-silence {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-speak-in-silence.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-within-the-envelope {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/drawing-within-the-envelope.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-where-to-find-me {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/mixed-where-to-find-me.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-lunch-break {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/unnamed-5.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-walk-with-a-rock {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/unnamed-6.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-the-moon-sheds-a-tear {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-the-moon-sheds-a-tear.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-semi-automatic-dispensers-of-hollow-pointed-thoughts-and-prayers {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-semi-automatic-dispensers-of-hollow-pointed-thoughts-and-prayers.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-bound {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-bound.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-and-so-cried-the-earth {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-and-so-cried-the-earth.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-gears {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-gears.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-campaign {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-campaign.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-my-mirror {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/unnamed-2.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-insanification {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/mandala-insanification.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-mud-season {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/drawing-mud-season.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-the-feathered-serpent {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-the-feathered-serpent.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-down-the-road {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-down-the-road.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-theywe {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/drawing-theywe.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-nine {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-nine.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-sublimation {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/wood-carving-sublimation.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-yes-or-no {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/unnamed-1.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-canvas {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/drawing-canvas.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-game {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/pastel-game.png') center center no-repeat;
+    background-size: cover;
+}
+
+#card-who-should-read-this-book-01 {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-1.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-who-should-read-this-book-02 {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-2.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-who-should-read-this-book-03 {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-3.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-who-should-read-this-book-04 {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-4.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-who-should-read-this-book-05 {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-5.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-who-should-read-this-book-06 {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-6.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-who-should-read-this-book-07 {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-7.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-who-should-read-this-book-08 {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-8.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-who-should-read-this-book-09 {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-9.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#card-who-should-read-this-book-10 {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-10.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+@supports (background-image:url('../img/painting-lifes-wake-is-art.webp')) {
+
+
+    #card-lifes-wake-is-art {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-lifes-wake-is-art.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-a-prayer-of-connection {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-dad.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-a-prayer-of-gratitude-for-karma {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-a-prayer-of-gratitude-for-karma.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-a-prayer-of-gratitude-for-the-miracle-of-life {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-a-prayer-of-gratitude-for-the-miracle-of-life.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-a-prayer-of-gratitude-for-the-miracle-of-existence {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-a-prayer-of-gratitude-for-the-miracle-of-existence.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-harmonious-anarchy {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-harmonious-anarchy.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-if-equality-were-real {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/conte-crayon-if-equality-were-real.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-harmonious-joy {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-harmonious-joy.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-just-for-a-moment-forget-it-all-and-remember-infinity-with-me {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-just-for-a-moment-forget-it-all-and-remember-infinity-with-me.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-song-birds-sing-their-song {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-song-birds-sing-their-song.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-tantric-magic {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/chalk-tantric-magic.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-kundalini-initiation {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-kundalini-initiation.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-gentle-grandmother-tree-a-eulogy {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/chalk-gentle-grandmother-tree.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-just-lie-and-tell-me-its-alright {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-just-lie-and-tell-me-its-alright.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-a-conversation-between-young-me-and-old-me {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-a-conversation-between-young-me-and-old-me.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-fiending-for-bodiless-freedom {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/unnamed-3.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-heyoka {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/drawing-heyoka.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-stand-of-illusions {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/mandala-stand-of-illusions.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-ecstatic-union {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-ecstatic-union.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-cardinality {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-cardinality.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-zealots-and-atheists {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/drawing-zealots-and-atheists.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-lol {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/unnamed-4.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-they-tried-to-teach-me {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/chalk-they-tried-to-teach-me.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-cleansing-the-slate {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-cleansing-the-slate.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-harmony {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-harmony.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-fully-conscious-lovers {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/drawing-fully-conscious-lovers.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-inside-the-stillness {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-inside-the-stillness.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-the-moon {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-the-moon.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-speak-in-silence {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-speak-in-silence.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-within-the-envelope {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/drawing-within-the-envelope.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-where-to-find-me {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/mixed-where-to-find-me.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-lunch-break {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/unnamed-5.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-walk-with-a-rock {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/unnamed-6.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-the-moon-sheds-a-tear {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-the-moon-sheds-a-tear.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-semi-automatic-dispensers-of-hollow-pointed-thoughts-and-prayers {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-semi-automatic-dispensers-of-hollow-pointed-thoughts-and-prayers.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-bound {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-bound.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-and-so-cried-the-earth {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-and-so-cried-the-earth.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-gears {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-gears.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-campaign {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-campaign.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-my-mirror {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/unnamed-2.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-insanification {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/mandala-insanification.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-mud-season {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/drawing-mud-season.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-the-feathered-serpent {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-the-feathered-serpent.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-down-the-road {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-down-the-road.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-theywe {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/drawing-theywe.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-nine {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/painting-nine.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-sublimation {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/wood-carving-sublimation.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-yes-or-no {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/unnamed-1.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-canvas {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/drawing-canvas.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-game {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../img/pastel-game.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-who-should-read-this-book-01 {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-1.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-who-should-read-this-book-02 {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-2.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-who-should-read-this-book-03 {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-3.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-who-should-read-this-book-04 {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-4.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-who-should-read-this-book-05 {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-5.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-who-should-read-this-book-06 {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-6.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-who-should-read-this-book-07 {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-7.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-who-should-read-this-book-08 {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-8.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-who-should-read-this-book-09 {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-9.webp') center center no-repeat;
+        background-size: cover;
+    }
+
+    #card-who-should-read-this-book-10 {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('../photos/unnamed-10.webp') center center no-repeat;
+        background-size: cover;
+    }
+}
