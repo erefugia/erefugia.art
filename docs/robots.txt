@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://www.rewilding-hypergraphia.com/sitemap.xml
