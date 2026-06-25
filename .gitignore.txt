@@ -1,0 +1,17 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build output
+bin/
+obj/
+
+# Publish output (we DO want /docs committed, so don't ignore it)
+# docs/   ← leave this out
+
+# .NET
+*.swp
+*.*~
+project.lock.json
+.DS_Store
